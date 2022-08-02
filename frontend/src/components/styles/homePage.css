@@ -2,9 +2,8 @@
     width:100%;
 }
 .task-head-main{
-    padding:3% 10%;
+    padding:0 10% 0 10%;
     display:flex;
-
 }
 .task-part,.task-active{
     width:10%;
@@ -35,4 +34,10 @@
 *::-webkit-scrollbar-thumb{
     background-color: rgb(200, 199, 199);
     border-radius: 10px;
+}
+.task-click{
+    padding: 1% 12% 0 12%;
+    font-family: 'Oswald';
+    font-size:18px;
+    /* margin:3% 0; */
 }

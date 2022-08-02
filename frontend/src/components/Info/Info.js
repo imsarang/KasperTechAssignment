@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/info.css'
 const Info = ({success,message,setInfo}) => {
-    const [seconds,setSeconds] = useState(2)
+    const [seconds,setSeconds] = useState(4)
 
     useEffect(()=>{
         const timer = setInterval(()=>{

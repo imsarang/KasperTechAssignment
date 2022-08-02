@@ -6,20 +6,19 @@ import Sidebar from './Sidebar'
 import { FaCreativeCommonsSampling, FaPlus } from 'react-icons/fa'
 import TaskSection from './TaskSection'
 import CreateTask from './CreateTask'
+import Info from '../Info/Info'
 const Home = () => {
   const token = JSON.parse(returnToken())
   const [user, setUser] = useState({})
-  const [showSideBar, setShowSideBar] = useState(false)
 
   const [create, setCreate] = useState(false)
   const [viewCreate, setViewCreate] = useState(false)
   const [viewAssigned, setViewAssigned] = useState(true)
-  const [viewAll,setViewAll] = useState(true)
+  const [viewAll,setViewAll] = useState(false)
 
   const [createdTasks, setCreatedTasks] = useState([])
   const [assignedTasks, setAssignedTasks] = useState([])
   const [allTasks,setAllTasks] = useState([])
-  const [load, setLoad] = useState(false)
 
   const [info,setInfo] = useState(false)
   const [meta,setMeta] = useState({
@@ -30,10 +29,10 @@ const Home = () => {
     handleCurretUser()
     handleTasks()
     showAllTasks()
-  }, [createdTasks,assignedTasks])
+  }, [createdTasks,assignedTasks,allTasks])
 
   const handleTasks = async () => {
-    // setLoad(true)
+    
     const result = await fetch(`/api/task/show`,{
       headers:{
         Authorization:`Bearer ${token}`
@@ -44,11 +43,10 @@ const Home = () => {
       setCreatedTasks(ans.createdByTask)
       setAssignedTasks(ans.assignedToTask)
     }
-    setLoad(false)
   }
 
   const handleCurretUser = async () => {
-    // setLoad(true)
+   
     const result = await fetch(`/api/user/current`, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -58,15 +56,11 @@ const Home = () => {
     
     if (ans.success) {
       setUser(ans.user)
-      if(ans.user.role=='Admin'){
-        setViewAll(true)
-      setViewAssigned(false)
-      }
+      // ans.user.role=='Admin'?setViewAll(true):setViewAssigned(true)
       
     } else {
       console.log(ans);
     }
-    setLoad(false)
   }
 
   const showAllTasks = async()=>{
@@ -107,14 +101,14 @@ const Home = () => {
     setViewAssigned(false)
     setViewAll(true)
   }
-  if (load) return <>Loading</>
+
   return (
     <div className='home'>
-      <Navbar user={user} showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
-      {
-        showSideBar ? <Sidebar /> : <></>
-      }
+      <Navbar user={user}/>
+      
       <div className='task-head'>
+      <div className='task-click'>Click on one of the following</div>
+
         <div className='task-head-main'>
           <div className={create?'task-active':'task-part'} onClick={handleCreate}>
             Create Task <FaPlus id='task-add' />
@@ -136,6 +130,9 @@ const Home = () => {
           viewAssigned ?<div><TaskSection taskArray={assignedTasks} token={token} user={user} setInfo={setInfo} setMeta={setMeta}/> </div>:
             create ? <CreateTask setCreate={setCreate} token={token} setViewAssigned={setViewAssigned} setViewAll={setViewAll} user={user} setInfo={setInfo} setMeta={setMeta}/> : 
             viewAll?<TaskSection taskArray={allTasks} token={token} user={user} setInfo={setInfo} setMeta={setMeta}/>:<></>
+      }
+      {
+        info?<Info success={meta.success} message={meta.message} setInfo={setInfo}/>:<></>
       }
     </div>
   )

@@ -101,6 +101,34 @@
 }
 
 /* task section */
+.colour-scheme{
+    display:flex;
+    padding:1% 12%;
+}
+.sample-1,
+.sample-2,
+.sample-3,
+.sample-4{
+    width:20px;
+    height: 20px;
+    border:1px solid rgb(69, 67, 67)
+}
+.sample-1{
+    background-color: #e8e9eb;
+}
+.sample-2{
+    background-color: rgb(178, 195, 210);
+}
+.sample-3{
+    background-color: rgb(135, 216, 196);
+}
+.sample-4{
+    background-color: rgb(218, 143, 143);
+}
+.sample-content{
+    padding:0 5% 0 1%;
+    font-family: 'Oswald';
+}
 .number-task{
     font-family: 'Oswald';
     padding:1% 12%;
@@ -134,7 +162,9 @@
     font-weight: bold;
     font-size: 18px;
 }
-
+.task-content{
+    width:100%;
+}
 /* task */
 
 .task-main{

@@ -1,7 +1,7 @@
 .failure,.success{
     position:absolute;
     background-color:rgb(242, 114, 114);
-    top:5%;
+    top:10vh;
     right:2%;
     z-index:99;
     padding:1% 3% 1% 3%;
