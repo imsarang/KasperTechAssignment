@@ -1,0 +1,212 @@
+/* create task */
+.create-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-main{
+    background-color: white;
+    padding:2%;
+    width:30%;
+}
+.close-create{
+    display:flex;
+    justify-content: end;
+}
+.searched-div{
+    max-height:100px;
+    overflow: auto;
+    border-radius: 10px;
+    font-family: "Oswald";
+}
+.searched-div::-webkit-scrollbar{
+    width:5px;
+    /* background-color: grey; */
+}
+.search-name{
+    font-size:15px;
+}
+.search-email{
+    font-size:12px;
+}
+.searched-div::-webkit-scrollbar-thumb{
+    background-color: grey;
+    border-radius: 10px;
+}
+.searched-user{
+    padding:1%;
+    cursor: pointer;
+    margin:1% 0 0 0;
+    background-color: #e8e9eb;
+
+}
+#remove-icon{
+    transform: rotate(45deg);
+    font-size:20px;
+    cursor: pointer;
+}
+#input-search{
+    width:100%;
+}
+.search-bar{
+    padding:10% 0 0 0;
+    width:100%;
+    display: flex;
+}
+.user-search{
+    padding:2%;
+    width:93%;
+}
+#search-icon{
+    padding:2% 2%;
+}
+.assigned-users{
+    display:flex;
+    padding:3% 0 3% 0;
+}
+.assign-user{
+    padding:1%;
+    background-color: #e8e9eb;
+    margin:0 1% 0 0;
+    border-radius: 5px;
+    /* width:100%; */
+    font-family: "Oswald";
+}
+#remove-assign{
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.task-create-btn{
+    width:100%;
+    padding:3% 0 0 0;
+}
+#task-create-btn{
+    width:95%;
+    padding:2%;
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+#task-create-btn:hover{
+    background-color: rgb(177, 131, 221);
+    transition:0.5s;
+}
+
+/* task section */
+.number-task{
+    font-family: 'Oswald';
+    padding:1% 12%;
+}
+.task-section{
+    /* width:90%; */
+    padding:1% 12%;
+}
+.task-info,.task-info-progress,.task-info-comp,.task-info-closed{
+    display:flex;
+    /* width:100%; */
+    padding: 2%;
+    background-color: #e8e9eb;
+    border-radius: 10px;
+    justify-content: space-between;
+    font-family: 'Oswald';
+    font-size:18px; 
+    cursor: pointer;
+    margin:1% 0 1% 0;
+}
+.task-info-progress{
+    background-color: rgb(178, 195, 210);
+}
+.task-info-comp{
+    background-color: rgb(135, 216, 196);
+}
+.task-info-closed{
+    background-color: rgb(218, 143, 143);
+}
+.task-span{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* task */
+
+.task-main{
+    padding:5%;
+    display:flex;
+    justify-content: center;
+}
+.task-main-desc,
+.task-main-desc-prg,
+.task-main-desc-comp,
+.task-main-desc-closed{
+    background-color: rgb(208, 172, 241);
+    width:55%;
+    border-radius: 10px;
+    font-family: 'Oswald';
+}
+.task-main-desc-prg{
+    background-color: rgb(178, 195, 210);
+}
+.task-main-desc-comp{
+    background-color: rgb(135, 216, 196);
+}
+.task-main-desc-closed{
+    background-color: rgb(218, 143, 143);
+}
+.task-main-part{
+    padding:3%;
+    width:100%;
+}
+.task-main-span{
+    font-weight: bold;
+}
+#update-head{
+    padding:3%;
+}
+.update-status{
+    display:flex;
+    justify-content: space-between;
+    padding:2%;
+    width:100%;
+}
+.update-btns{
+    width:100%;
+    padding:3%;
+}
+#created,#in-progress,#completed,#close{
+    padding:5%;
+    width:90%;
+    cursor: pointer;
+    font-family: "Oswald";
+    font-size:16px;
+}
+#created:hover{
+    transition: 0.5s;
+    background-color: #e4e4b2;
+}
+#in-progress:hover{
+    transition: 0.5s;
+    background-color: rgb(193, 211, 227);
+}
+#completed:hover{
+    transition: 0.5s;
+    background-color: rgb(172, 235, 211);
+}
+#close:hover{
+    transition:0.5s;
+    background-color: rgb(244, 183, 183);
+}
+
+/* no task */
+.no-task{
+    padding:1% 11%;
+    font-family: 'Bebas Neue';
+    font-size: 40px;
+}

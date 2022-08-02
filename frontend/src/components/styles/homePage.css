@@ -1,0 +1,38 @@
+.home{
+    width:100%;
+}
+.task-head-main{
+    padding:3% 10%;
+    display:flex;
+
+}
+.task-part,.task-active{
+    width:10%;
+    padding:1% 2%;
+    background-color: #e8e9eb;
+    margin:2%;
+    font-family: "Oswald";
+    display:flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.task-active{
+    background-color: #5848b8;
+    color:white
+}
+#task-add{
+    padding: 2% 0;
+}
+
+.task-part:hover{
+    background-color: #b1a7ea;
+    transition: 0.5s;
+}
+
+*::-webkit-scrollbar{
+    width:5px;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: rgb(200, 199, 199);
+    border-radius: 10px;
+}

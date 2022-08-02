@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@300;400&family=Battambang:wght@300&family=Bebas+Neue&family=Coda&family=Domine:wght@500&family=Josefin+Sans&family=Luckiest+Guy&family=Merriweather&family=Mochiy+Pop+P+One&family=Mulish:wght@300&family=Oswald:wght@300;400&family=Raleway:wght@500&family=Roboto+Condensed:wght@300&family=Roboto+Slab&family=Share&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@300;400&family=Battambang:wght@300&family=Bebas+Neue&family=Coda&family=Domine:wght@500&family=Josefin+Sans&family=Luckiest+Guy&family=Merriweather&family=Mochiy+Pop+P+One&family=Mulish:wght@300&family=Oswald:wght@300;400&family=Raleway:wght@500&family=Roboto+Condensed:wght@300&family=Roboto+Slab&family=Share&display=swap');
+
+*{
+    margin:0
+}
+
+.start{
+    height: 100vh;
+    width: 100%;
+}
+.bg-1{
+    position: absolute;
+    background-image:linear-gradient(rgba(18, 18, 81, 0.6),rgba(0,0,0,0.1)),url('../images/bg-3.jpg');
+    width:100%;
+    height:90%;
+    clip-path: polygon(0 0,100% 0,100% 60%,0 100%);
+    z-index:30; 
+}
+.bg-2{
+    position: absolute;
+    top:30%;
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('../images/bg-3.jpg');
+    width:100%;
+    height: 70%;
+}
+
+.main-box{
+    z-index:67;
+    width:40%;
+    height: 50%;
+    background-color: white;
+    position: absolute;
+    top:20%;
+    left:40%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);   
+    padding:2%;
+}
+
+.main-head{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    font-family:'Bebas Neue';
+    font-size: 30px;
+}
+.choice{
+    cursor:pointer;
+}
+.active{
+    cursor:default ;
+    border-bottom:5px solid #d0b9ec;
+    /* padding:1%; */
+}
+.login-input,.register-input{
+    width:95%;
+    padding:2%;
+    margin:5% 0 0 0;
+    background-color: #e8e9eb;
+    border:none;
+    font-family: 'Oswald';
+    font-size:17px
+}
+.register-part{
+    padding:2% 0 0 0;
+}
+.register-input{
+    margin:2% 0 0 0;
+}
+.login{
+    padding:2%;
+}
+.login-btn{
+    padding:10% 0 0 0;
+}
+.register-btn{
+    padding:5% 0 0 0;
+}
+#login-btn,#register-btn{
+    width:99%;
+    padding:3%;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    cursor: pointer;
+    border:none
+}
+#login-btn:hover,#register-btn:hover{
+    background-color: #d0b9ec;
+    transition: 0.5s;
+}
