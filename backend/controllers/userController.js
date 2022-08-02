@@ -1,5 +1,6 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors")
 const User = require("../models/userModel")
+const Task = require("../models/taskModel")
 
 exports.USER_ROLE = {
     ADMIN:"Admin",TM_USER:'TM USER'
@@ -34,6 +35,10 @@ exports.loginUser = catchAsyncErrors(async(req,res)=>{
         message:"Please fill all the details"
     })
     const user = await User.findOne({email:email})
+    if(!user) return res.status(400).json({
+        success:false,
+        message:"User not regisetered"
+    })
     const isMatched = await user.comparePassword(password)
     if(isMatched){
         const token =user.generateToken()
@@ -96,5 +101,19 @@ exports.searchUser = catchAsyncErrors(async(req,res)=>{
     else res.status(400).json({
         success:false,
         message:"No User Found!"
+    })
+})
+
+exports.removeAccount = catchAsyncErrors(async(req,res)=>{
+    const task = await Task.deleteMany({
+        $or:[{createdBy:req.user._id},{assignedTo:req.user._id}]})
+    const user = await User.findByIdAndDelete({_id:req.user._id})
+    if(user) return res.status(200).json({
+        success:true,
+        message:'Account removed '
+    })
+    else return res.status(400).json({
+        success:false,
+        message:"Error in removing account"
     })
 })

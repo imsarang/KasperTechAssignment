@@ -23,6 +23,17 @@ const Navbar = ({ user}) => {
       localStorage.removeItem("token")
     }
   }
+  const handleRemoveAccount =async()=>{
+    const result = await fetch(`/api/user/remove`,{
+      method:"DELETE",
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
+    localStorage.removeItem("userId")
+    localStorage.removeItem("token")
+    navigate('/')
+  }
   return (
     <div className='navbar'>
       <div className='bars'>
@@ -36,6 +47,9 @@ const Navbar = ({ user}) => {
       <div className='nav-content'>
         <div className='logout' onClick={handleLogout}>
           Logout
+        </div>
+        <div className='remove-acc' onClick={handleRemoveAccount}>
+          Remove Account
         </div>
       </div>
     </div>
