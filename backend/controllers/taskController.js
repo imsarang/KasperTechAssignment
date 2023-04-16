@@ -53,7 +53,7 @@ exports.assignTask = catchAsyncErrors(async(req,res)=>{
 })
 
 exports.showAllTasks = catchAsyncErrors(async(req,res)=>{
-    const task = await Task.find().populate("createdBy assignedTo statusLogs")
+    const task = await Task.find().sort({"timestamp" : -1}).populate("createdBy assignedTo statusLogs")
 
     if(task) return res.status(200).json({
         success:true,
